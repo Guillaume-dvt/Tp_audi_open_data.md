@@ -29,15 +29,15 @@ Complétez le tableau d'identité ci-dessous **avant** d'ouvrir le fichier.
 
 | Élément | Votre réponse |
 |---|---|
-| Titre du jeu | | Prix des carburants en France - Flux instantané - v2
-| Producteur | | Ministères économiques et financiers (DGCCRF)
-| URL | | https://www.data.gouv.fr/datasets/prix-des-carburants-en-france-flux-instantane-v2-amelioree
-| Licence | | Licence Ouverte / Open Licence version 2.0
-| Date de dernière mise à jour | | 18 septembre 2026
-| Fréquence de mise à jour | | En continu 
-| Couverture géographique et temporelle | | France entière
-| Format téléchargé | | CSV
-| Dictionnaire des variables disponible ? (oui/non) | | Oui
+| **Titre du jeu** | Prix des carburants en France - Flux instantané - v2 |
+| **Producteur** | Ministères économiques et financiers (DGCCRF) |
+| **URL** | https://www.data.gouv.fr/datasets/prix-des-carburants-en-france-flux-instantane-v2-amelioree |
+| **Licence** | Licence Ouverte / Open Licence version 2.0 |
+| **Date de dernière mise à jour** | 18 septembre 2026 |
+| **Fréquence de mise à jour** | En continu |
+| **Couverture géographique et temporelle** | France entière |
+| **Format téléchargé** | CSV |
+| **Dictionnaire des variables disponible ? (oui/non)** | Oui |
 
 ### 2. Ouvrir et décrire (15 min)
 - Nombre de lignes et de colonnes. (Pas-de-Calais) 231 stations 47 colonnes
