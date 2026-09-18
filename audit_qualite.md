@@ -58,7 +58,7 @@ Pour chaque dimension, donnez **au moins un constat chiffré ou un exemple préc
 |---|---|---|---|
 | **Complétude** | Formule `=NB.VIDE` / Filtres | 16 valeurs manquantes identifiées dans la colonne `Prix Gazole` (et 16 stations sans services renseignés). | Moyenne |
 | **Exactitude** | Tri croissant / décroissant | Prix du Gazole compris entre 2,25 € et 2,80 € / L. Aucune valeur aberrante (type 0 € ou 99 €). | Faible |
-| **Cohérence** | Filtre croisé | Pas d'incohérence majeure : les stations indiquant le Gazole disponible affichent bien un prix valide. | Faible |
+| **Cohérence** | Filtre croisé Carburants disponibles et Prix Gazole | Pas d'incohérence majeure : les stations indiquant le Gazole disponible affichent bien un prix valide. | Faible |
 | **Validité** | Inspection visuelle du format | Les colonnes `horaires` et `services` contiennent du texte brut en JSON (`{"@automate-24-24": ""}`), inexploitable sans traitement. | Moyenne |
 | **Unicité** | Mise en forme conditionnelle (doublons) | 0 doublon détecté sur les 231 identifiants `id`. | Faible |
 | **Fraîcheur** | Tri sur la date de mise à jour | Date la plus récente : 18/09/2026. Date la plus ancienne : 24/07/2026 (certains prix n'ont pas été réactualisés depuis 2 mois). | Forte |
@@ -68,6 +68,16 @@ Proposez **deux usages** de ce jeu pour l'agence. Pour chacun :
 - la question métier à laquelle il répond ;
 - la ou les colonnes utilisées ;
 - le défaut qualité qui pourrait fausser la réponse.
+
+### Usage 1 : Cartographie comparative des prix du gazole pour les transporteurs
+* **Question métier :** Quelles sont les communes du Pas-de-Calais où les tarifs du gazole sont les plus élevés pour les flottes de véhicules professionnels ?
+* **Colonnes mobilisées :** `Prix Gazole`, `Ville`, `Code postal`, `latitude`, `longitude`.
+* **Défaut de qualité  :** **La fraîcheur**. Des écarts de mise à jour allant jusqu'à deux mois (de juillet à septembre 2026) risquent d'invalider la pertinence des comparaisons tarifaires.
+
+### Usage 2 : Diagnostic de l'attractivité et des équipements des stations du territoire
+* **Question métier :** Les zones d'activités du Pas-de-Calais disposent-elles d'une couverture suffisante en automates 24/24 et en services annexes (station de gonflage, lavage, restauration) ?
+* **Colonnes mobilisées :** `Code postal`, `Adresse`, `Services proposés`, `Automate 24-24 (oui/non)`.
+* **Défaut de qualité  :** **La validité et la complétude**. Les 16 stations sans aucun service renseigné et le format JSON brut inexploitable directement empêchent un inventaire automatique fiable des équipements.
 
 ### 5. Parcours + uniquement : croiser deux sources (en autonomie)
 Trouvez une seconde source pour un même indicateur (ex. population communale INSEE vs portail régional). Comparez les valeurs sur 5 lignes et expliquez les écarts éventuels.
